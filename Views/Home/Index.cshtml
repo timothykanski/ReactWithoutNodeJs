@@ -1,0 +1,133 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React App without Node.js/Webpack</title>
+    <!-- Load React and ReactDOM -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- Load Babel Compiler -->
+    <script src="https://unpkg.com/@@babel/standalone/babel.min.js"></script>
+
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #333;
+            margin: 0;
+            padding: 20px;
+            color: #aaa;
+        }
+
+        /* Main App container */
+        #root {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .button-container{
+          text-align:center;
+        }
+
+        .button-container button {
+          margin: 10px;
+          font-size: 18px;
+          padding: 10px 15px;
+        }
+
+        /* Widget card styling */
+        .widget-card {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: #fff;
+            border-radius: 8px;
+            overflow-y: auto;
+            width: 300px; /* default width, can be removed if width is always controlled by React props */
+            margin: 10px;
+            transition: transform 0.3s ease;
+            text-align:center;
+        }
+
+            .widget-card:hover {
+                transform: translateY(-5px);
+            }
+
+        /* Widget card content styling */
+        .widget-content {
+            padding: 15px;
+        }
+
+        .widget-card ul{
+            list-style-type: none;
+            padding-left: 0; /* Optional: removes padding */
+            margin-left: 0; /* Optional: aligns list to the left */
+        }
+
+        .widget-title {
+            font-size: 1.5em;
+            color: #0073aa;
+            margin-bottom: 5px;
+        }
+
+        .widget-description {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .widget-image {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 10px;
+        }
+
+        /* Unordered list for fields */
+        .widget-fields {
+            list-style-type: none;
+            padding: 0;
+        }
+
+            .widget-fields li {
+                background-color: #eef;
+                padding: 5px;
+                margin-bottom: 5px;
+                border-radius: 4px;
+                font-size: 0.9em;
+            }
+
+        /* Button styling */
+        button {
+            background-color: #0073aa;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+            button:hover {
+                background-color: #005fa3;
+            }
+
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <!-- App Component -->
+    <script type="text/babel" src="../../js/App.jsx"></script>
+    <!-- Widget Component -->
+    <script type="text/babel" src="../../js/Widget.jsx"></script>
+    <!-- Babel Script -->
+    <script type="text/babel">
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
